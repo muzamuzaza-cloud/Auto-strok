@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NexGen Receipt Generator - Jogja & Borobudur Edition</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="app-container">
+        <header>
+            <h2>NexGen Receipt Generator</h2>
+            <p>Wilayah Yogyakarta & Kawasan Borobudur</p>
+        </header>
+
+        <div class="tabs">
+            <button class="tab-btn active">Struk Belanja</button>
+            <button class="tab-btn">Invoice Toko</button>
+            <button class="tab-btn">Nota Tagihan</button>
+        </div>
+
+        <div class="preview-box">
+            <div id="receipt-target" class="receipt">
+                <div class="receipt-header">
+                    <h3 id="store-name">MEMUAT TOKO...</h3>
+                    <p id="store-address">Memuat Alamat...</p>
+                    <p id="store-phone">Telp. (0274) 555-xxxx</p>
+                </div>
+                <div class="line-break">---------------------------------</div>
+                <div class="receipt-info">
+                    <p>No Order: <span id="order-id">ORD-XXXXXX</span></p>
+                    <p>Tanggal: <span id="receipt-date">00/00/0000 00:00</span></p>
+                    <p>Kasir: <span id="cashier-name">Kasir Utama</span></p>
+                </div>
+                <div class="line-break">---------------------------------</div>
+                <div class="receipt-items" id="receipt-items">
+                    </div>
+                <div class="line-break">---------------------------------</div>
+                <div class="receipt-total">
+                    <p><strong>TOTAL: <span id="receipt-total-price">Rp 0</span></strong></p>
+                </div>
+                <div class="receipt-footer">
+                    <p>Matur Nuwun / Terima Kasih</p>
+                    <p>Kawasan Wisata Jogja-Borobudur</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="control-panel">
+            <button onclick="generateOtomatis()" class="btn btn-primary">Acak Struk Baru (100 Toko)</button>
+            <button onclick="downloadPNG()" class="btn btn-success">Simpan Gambar PNG</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
